@@ -1,875 +1,1273 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: CountdownApp.frmMain
-// Assembly: CountdownApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: FC7E3B5E-A665-400F-94A5-48F1DBB775B0
-// Assembly location: C:\Users\Pika\Desktop\WaktuSimulasiAppv1.1.exe
-
-using CountdownApp.My;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using CountdownApp.My;
+using CountdownApp.My.Resources;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace CountdownApp
 {
-  [DesignerGenerated]
-  public class frmMain : Form
-  {
-    private IContainer components;
-    private bool FlagInitialTimeSynced;
+	[DesignerGenerated]
+	public class frmMain : Form
+	{
+		private IContainer components;
 
-    public frmMain()
-    {
-      this.Closing += new CancelEventHandler(this.frmMain_Closing);
-      this.Load += new EventHandler(this.frmMain_Load);
-      this.FlagInitialTimeSynced = false;
-      this.InitializeComponent();
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("picLogo")]
+		private PictureBox _picLogo;
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("lblMainTitle")]
+		private Label _lblMainTitle;
 
-    [DebuggerStepThrough]
-    private void InitializeComponent()
-    {
-      this.components = (IContainer) new System.ComponentModel.Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmMain));
-      this.lblMainTitle = new Label();
-      this.lblHeaderBackground = new Label();
-      this.lblSubTitle = new Label();
-      this.btnStart = new Button();
-      this.btnOnOff = new Button();
-      this.PictureBox2 = new PictureBox();
-      this.picLogo = new PictureBox();
-      this.txtHours = new TextBox();
-      this.txtMinutes = new TextBox();
-      this.PictureBox3 = new PictureBox();
-      this.txtSeconds = new TextBox();
-      this.PictureBox4 = new PictureBox();
-      this.Label5 = new Label();
-      this.Label6 = new Label();
-      this.Label7 = new Label();
-      this.Label11 = new Label();
-      this.Label10 = new Label();
-      this.Label9 = new Label();
-      this.lblTime = new Label();
-      this.Label14 = new Label();
-      this.Label13 = new Label();
-      this.Label8 = new Label();
-      this.chkMakeTransparent = new CheckBox();
-      this.Label15 = new Label();
-      this.chkMakeTopmostWin = new CheckBox();
-      this.chkRefreshBrowser = new CheckBox();
-      this.Label12 = new Label();
-      this.btnRereadTime = new Button();
-      this.btnAddSeconds = new Button();
-      this.Label16 = new Label();
-      this.Label4 = new Label();
-      this.Label17 = new Label();
-      this.btnSubtractSeconds = new Button();
-      this.Label19 = new Label();
-      this.Label20 = new Label();
-      this.Label18 = new Label();
-      this.lblTimeServerUrl = new Label();
-      this.tmrTime = new Timer(this.components);
-      this.chkAudibleNotifications = new CheckBox();
-      ((ISupportInitialize) this.PictureBox2).BeginInit();
-      ((ISupportInitialize) this.picLogo).BeginInit();
-      ((ISupportInitialize) this.PictureBox3).BeginInit();
-      ((ISupportInitialize) this.PictureBox4).BeginInit();
-      this.SuspendLayout();
-      this.lblMainTitle.AutoSize = true;
-      this.lblMainTitle.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.lblMainTitle.Font = new Font("Calibri", 20.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.lblMainTitle.ForeColor = Color.WhiteSmoke;
-      this.lblMainTitle.Location = new Point(5, 9);
-      this.lblMainTitle.Name = "lblMainTitle";
-      this.lblMainTitle.Size = new Size(194, 33);
-      this.lblMainTitle.TabIndex = 3;
-      this.lblMainTitle.Text = "Countdown App";
-      this.lblHeaderBackground.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.lblHeaderBackground.Font = new Font("Calibri", 14.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.lblHeaderBackground.ForeColor = Color.White;
-      this.lblHeaderBackground.Location = new Point(0, 0);
-      this.lblHeaderBackground.Name = "lblHeaderBackground";
-      this.lblHeaderBackground.Size = new Size(520, 80);
-      this.lblHeaderBackground.TabIndex = 5;
-      this.lblSubTitle.AutoSize = true;
-      this.lblSubTitle.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.lblSubTitle.Font = new Font("Calibri", 14.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.lblSubTitle.ForeColor = Color.WhiteSmoke;
-      this.lblSubTitle.Location = new Point(5, 40);
-      this.lblSubTitle.Name = "lblSubTitle";
-      this.lblSubTitle.Size = new Size(360, 23);
-      this.lblSubTitle.TabIndex = 6;
-      this.lblSubTitle.Text = "Karena semua orang butuh kepastian (waktu)";
-      this.btnStart.BackColor = Color.FromArgb(17, 85, 204);
-      this.btnStart.FlatAppearance.BorderColor = Color.FromArgb(17, 85, 204);
-      this.btnStart.FlatStyle = FlatStyle.Flat;
-      this.btnStart.Font = new Font("Calibri", 9.75f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnStart.ForeColor = Color.White;
-      this.btnStart.Location = new Point(395, 93);
-      this.btnStart.Name = "btnStart";
-      this.btnStart.Size = new Size(97, 25);
-      this.btnStart.TabIndex = 27;
-      this.btnStart.Tag = (object) "Start Countdown";
-      this.btnStart.Text = "Mulai Hitung";
-      this.btnStart.UseVisualStyleBackColor = false;
-      this.btnOnOff.FlatAppearance.BorderColor = Color.LightGray;
-      this.btnOnOff.FlatStyle = FlatStyle.Flat;
-      this.btnOnOff.Font = new Font("Calibri", 9.75f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnOnOff.Location = new Point(330, 93);
-      this.btnOnOff.Name = "btnOnOff";
-      this.btnOnOff.Size = new Size(56, 25);
-      this.btnOnOff.TabIndex = 26;
-      this.btnOnOff.Text = "On";
-      this.btnOnOff.UseVisualStyleBackColor = true;
-      this.PictureBox2.Image = (Image) CountdownApp.My.Resources.Resources.Rounded_Rectangle;
-      this.PictureBox2.Location = new Point(157, 145);
-      this.PictureBox2.Name = "PictureBox2";
-      this.PictureBox2.Size = new Size(97, 92);
-      this.PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-      this.PictureBox2.TabIndex = 30;
-      this.PictureBox2.TabStop = false;
-      this.picLogo.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.picLogo.Image = (Image) CountdownApp.My.Resources.Resources.Logoblue;
-      this.picLogo.Location = new Point(390, 12);
-      this.picLogo.Name = "picLogo";
-      this.picLogo.Size = new Size(102, 56);
-      this.picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-      this.picLogo.TabIndex = 4;
-      this.picLogo.TabStop = false;
-      this.txtHours.BackColor = Color.FromArgb(201, 218, 248);
-      this.txtHours.BorderStyle = BorderStyle.None;
-      this.txtHours.Font = new Font("Calibri", 36f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.txtHours.Location = new Point(176, 162);
-      this.txtHours.Name = "txtHours";
-      this.txtHours.Size = new Size(59, 59);
-      this.txtHours.TabIndex = 31;
-      this.txtHours.Text = "00";
-      this.txtHours.TextAlign = HorizontalAlignment.Center;
-      this.txtMinutes.BackColor = Color.FromArgb(201, 218, 248);
-      this.txtMinutes.BorderStyle = BorderStyle.None;
-      this.txtMinutes.Font = new Font("Calibri", 36f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.txtMinutes.Location = new Point(294, 162);
-      this.txtMinutes.Name = "txtMinutes";
-      this.txtMinutes.Size = new Size(59, 59);
-      this.txtMinutes.TabIndex = 33;
-      this.txtMinutes.Text = "00";
-      this.txtMinutes.TextAlign = HorizontalAlignment.Center;
-      this.PictureBox3.Image = (Image) CountdownApp.My.Resources.Resources.Rounded_Rectangle;
-      this.PictureBox3.Location = new Point(275, 145);
-      this.PictureBox3.Name = "PictureBox3";
-      this.PictureBox3.Size = new Size(97, 92);
-      this.PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-      this.PictureBox3.TabIndex = 32;
-      this.PictureBox3.TabStop = false;
-      this.txtSeconds.BackColor = Color.FromArgb(201, 218, 248);
-      this.txtSeconds.BorderStyle = BorderStyle.None;
-      this.txtSeconds.Font = new Font("Calibri", 36f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.txtSeconds.Location = new Point(414, 162);
-      this.txtSeconds.Name = "txtSeconds";
-      this.txtSeconds.Size = new Size(59, 59);
-      this.txtSeconds.TabIndex = 35;
-      this.txtSeconds.Text = "00";
-      this.txtSeconds.TextAlign = HorizontalAlignment.Center;
-      this.PictureBox4.Image = (Image) CountdownApp.My.Resources.Resources.Rounded_Rectangle;
-      this.PictureBox4.Location = new Point(395, 145);
-      this.PictureBox4.Name = "PictureBox4";
-      this.PictureBox4.Size = new Size(97, 92);
-      this.PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-      this.PictureBox4.TabIndex = 34;
-      this.PictureBox4.TabStop = false;
-      this.Label5.AutoSize = true;
-      this.Label5.Location = new Point(5, 98);
-      this.Label5.Name = "Label5";
-      this.Label5.Size = new Size(214, 15);
-      this.Label5.TabIndex = 36;
-      this.Label5.Tag = (object) "Automatic countdown? (click button)";
-      this.Label5.Text = "Hitung Otomatis? (Klik Tombol on/off)";
-      this.Label6.Location = new Point(5, 186);
-      this.Label6.Name = "Label6";
-      this.Label6.Size = new Size(116, 51);
-      this.Label6.TabIndex = 38;
-      this.Label6.Tag = (object) "(time reference to countdown)";
-      this.Label6.Text = "(Waktu target Refresh untuk Countdown)";
-      this.Label7.Font = new Font("Calibri", 12f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.Label7.Location = new Point(5, 145);
-      this.Label7.Name = "Label7";
-      this.Label7.Size = new Size(128, 41);
-      this.Label7.TabIndex = 37;
-      this.Label7.Tag = (object) "Countdown to what time?";
-      this.Label7.Text = "Countdown Ke Jam Berapa?";
-      this.Label11.AutoSize = true;
-      this.Label11.Location = new Point(418, 240);
-      this.Label11.Name = "Label11";
-      this.Label11.Size = new Size(51, 15);
-      this.Label11.TabIndex = 41;
-      this.Label11.Tag = (object) "Seconds";
-      this.Label11.Text = "Detik (s)";
-      this.Label10.AutoSize = true;
-      this.Label10.Location = new Point(288, 240);
-      this.Label10.Name = "Label10";
-      this.Label10.Size = new Size(70, 15);
-      this.Label10.TabIndex = 40;
-      this.Label10.Tag = (object) "Minutes";
-      this.Label10.Text = "Menit (mts)";
-      this.Label9.AutoSize = true;
-      this.Label9.Location = new Point(173, 240);
-      this.Label9.Name = "Label9";
-      this.Label9.Size = new Size(65, 15);
-      this.Label9.TabIndex = 39;
-      this.Label9.Tag = (object) "Hours";
-      this.Label9.Text = "Jam (hour)";
-      this.lblTime.Font = new Font("Calibri", 36f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.lblTime.ForeColor = Color.Gray;
-      this.lblTime.Location = new Point(277, 322);
-      this.lblTime.Name = "lblTime";
-      this.lblTime.Size = new Size(195, 56);
-      this.lblTime.TabIndex = 50;
-      this.lblTime.Text = "00:00:00";
-      this.lblTime.TextAlign = ContentAlignment.BottomCenter;
-      this.Label14.AutoSize = true;
-      this.Label14.Font = new Font("Calibri", 12f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.Label14.Location = new Point(274, 301);
-      this.Label14.Name = "Label14";
-      this.Label14.Size = new Size(201, 19);
-      this.Label14.TabIndex = 49;
-      this.Label14.Text = "Time on Target Server GMT+7";
-      this.Label13.BackColor = Color.LightGray;
-      this.Label13.Location = new Point(5, 300);
-      this.Label13.Name = "Label13";
-      this.Label13.Size = new Size(241, 1);
-      this.Label13.TabIndex = 48;
-      this.Label8.AutoSize = true;
-      this.Label8.Font = new Font("Calibri", 9.75f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.Label8.Location = new Point(5, 274);
-      this.Label8.Name = "Label8";
-      this.Label8.Size = new Size(199, 15);
-      this.Label8.TabIndex = 47;
-      this.Label8.Tag = (object) "What Features You Want to turn on?";
-      this.Label8.Text = "Fitur apa yang mau kamu nyalakan?";
-      this.chkMakeTransparent.AutoSize = true;
-      this.chkMakeTransparent.Location = new Point(11, 359);
-      this.chkMakeTransparent.Name = "chkMakeTransparent";
-      this.chkMakeTransparent.Size = new Size(143, 19);
-      this.chkMakeTransparent.TabIndex = 45;
-      this.chkMakeTransparent.Tag = (object) "Make Window Transparent";
-      this.chkMakeTransparent.Text = "Windows transparan";
-      this.chkMakeTransparent.UseVisualStyleBackColor = true;
-      this.Label15.BackColor = Color.LightGray;
-      this.Label15.Location = new Point(5, 262);
-      this.Label15.Name = "Label15";
-      this.Label15.Size = new Size(492, 1);
-      this.Label15.TabIndex = 46;
-      this.chkMakeTopmostWin.AutoSize = true;
-      this.chkMakeTopmostWin.Location = new Point(11, 333);
-      this.chkMakeTopmostWin.Name = "chkMakeTopmostWin";
-      this.chkMakeTopmostWin.Size = new Size(183, 19);
-      this.chkMakeTopmostWin.TabIndex = 44;
-      this.chkMakeTopmostWin.Tag = (object) "Show Timer Window on Top";
-      this.chkMakeTopmostWin.Text = "Tampilkan di Depan browser";
-      this.chkMakeTopmostWin.UseVisualStyleBackColor = true;
-      this.chkRefreshBrowser.AutoSize = true;
-      this.chkRefreshBrowser.Location = new Point(11, 307);
-      this.chkRefreshBrowser.Name = "chkRefreshBrowser";
-      this.chkRefreshBrowser.Size = new Size(180, 19);
-      this.chkRefreshBrowser.TabIndex = 43;
-      this.chkRefreshBrowser.Tag = (object) "Countdown to 0 -> Refresh";
-      this.chkRefreshBrowser.Text = "Bila Countdown 0 -> Refresh";
-      this.chkRefreshBrowser.UseVisualStyleBackColor = true;
-      this.Label12.BackColor = Color.LightGray;
-      this.Label12.Location = new Point(5, 411);
-      this.Label12.Name = "Label12";
-      this.Label12.Size = new Size(492, 1);
-      this.Label12.TabIndex = 51;
-      this.btnRereadTime.BackColor = Color.FromArgb(17, 85, 204);
-      this.btnRereadTime.FlatAppearance.BorderColor = Color.FromArgb(17, 85, 204);
-      this.btnRereadTime.FlatAppearance.BorderSize = 0;
-      this.btnRereadTime.FlatStyle = FlatStyle.Flat;
-      this.btnRereadTime.Font = new Font("Calibri", 9.75f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnRereadTime.ForeColor = Color.White;
-      this.btnRereadTime.Location = new Point(323, 274);
-      this.btnRereadTime.Name = "btnRereadTime";
-      this.btnRereadTime.Size = new Size(102, 20);
-      this.btnRereadTime.TabIndex = 52;
-      this.btnRereadTime.Text = "Re-read Time";
-      this.btnRereadTime.UseVisualStyleBackColor = false;
-      this.btnAddSeconds.BackColor = Color.FromArgb(201, 218, 248);
-      this.btnAddSeconds.FlatAppearance.BorderColor = Color.Silver;
-      this.btnAddSeconds.FlatAppearance.BorderSize = 0;
-      this.btnAddSeconds.FlatStyle = FlatStyle.Flat;
-      this.btnAddSeconds.Font = new Font("Calibri", 9f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnAddSeconds.Location = new Point(452, 386);
-      this.btnAddSeconds.Name = "btnAddSeconds";
-      this.btnAddSeconds.Size = new Size(17, 18);
-      this.btnAddSeconds.TabIndex = 53;
-      this.btnAddSeconds.Text = "+";
-      this.btnAddSeconds.TextAlign = ContentAlignment.TopCenter;
-      this.btnAddSeconds.UseVisualStyleBackColor = false;
-      this.Label16.AutoSize = true;
-      this.Label16.Location = new Point(252, 388);
-      this.Label16.Name = "Label16";
-      this.Label16.Size = new Size(198, 15);
-      this.Label16.TabIndex = 54;
-      this.Label16.Tag = (object) "";
-      this.Label16.Text = "Click + / - to adjust seconds (detik):";
-      this.Label4.BackColor = Color.LightGray;
-      this.Label4.Location = new Point(5, 129);
-      this.Label4.Name = "Label4";
-      this.Label4.Size = new Size(492, 1);
-      this.Label4.TabIndex = 55;
-      this.Label17.BackColor = Color.LightGray;
-      this.Label17.Location = new Point(245, 262);
-      this.Label17.Name = "Label17";
-      this.Label17.Size = new Size(1, 149);
-      this.Label17.TabIndex = 56;
-      this.btnSubtractSeconds.BackColor = Color.FromArgb(201, 218, 248);
-      this.btnSubtractSeconds.FlatAppearance.BorderColor = Color.Silver;
-      this.btnSubtractSeconds.FlatAppearance.BorderSize = 0;
-      this.btnSubtractSeconds.FlatStyle = FlatStyle.Flat;
-      this.btnSubtractSeconds.Font = new Font("Calibri", 9f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnSubtractSeconds.Location = new Point(475, 386);
-      this.btnSubtractSeconds.Name = "btnSubtractSeconds";
-      this.btnSubtractSeconds.Size = new Size(17, 18);
-      this.btnSubtractSeconds.TabIndex = 57;
-      this.btnSubtractSeconds.Text = "-";
-      this.btnSubtractSeconds.TextAlign = ContentAlignment.TopCenter;
-      this.btnSubtractSeconds.UseVisualStyleBackColor = false;
-      this.Label19.BackColor = Color.LightGray;
-      this.Label19.Location = new Point(5, 443);
-      this.Label19.Name = "Label19";
-      this.Label19.Size = new Size(492, 1);
-      this.Label19.TabIndex = 59;
-      this.Label20.AutoSize = true;
-      this.Label20.Location = new Point(5, 420);
-      this.Label20.Name = "Label20";
-      this.Label20.Size = new Size(173, 15);
-      this.Label20.TabIndex = 60;
-      this.Label20.Tag = (object) "";
-      this.Label20.Text = "Target Server URL to Read time:";
-      this.Label18.Font = new Font("Calibri", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.Label18.Location = new Point(5, 449);
-      this.Label18.Name = "Label18";
-      this.Label18.Size = new Size(470, 28);
-      this.Label18.TabIndex = 61;
-      this.Label18.Tag = (object) "";
-      this.Label18.Text = "Program ini adalah sebuah kekayaan intelektual yang dilindungi oleh undang undang HAKI. Supportlah / bantulah kami dengan membeli lisensi resmi agar kami bisa terus menolong TS.";
-      this.lblTimeServerUrl.AutoSize = true;
-      this.lblTimeServerUrl.BackColor = Color.FromArgb(201, 218, 248);
-      this.lblTimeServerUrl.Location = new Point(185, 420);
-      this.lblTimeServerUrl.Name = "lblTimeServerUrl";
-      this.lblTimeServerUrl.Size = new Size(171, 15);
-      this.lblTimeServerUrl.TabIndex = 62;
-      this.lblTimeServerUrl.Tag = (object) "";
-      this.lblTimeServerUrl.Text = "https://internsip.kemkes.go.id";
-      this.tmrTime.Interval = 1000;
-      this.chkAudibleNotifications.AutoSize = true;
-      this.chkAudibleNotifications.Location = new Point(11, 385);
-      this.chkAudibleNotifications.Name = "chkAudibleNotifications";
-      this.chkAudibleNotifications.Size = new Size(176, 19);
-      this.chkAudibleNotifications.TabIndex = 63;
-      this.chkAudibleNotifications.Tag = (object) "";
-      this.chkAudibleNotifications.Text = "Allow audible notifications.";
-      this.chkAudibleNotifications.UseVisualStyleBackColor = true;
-      this.AutoScaleDimensions = new SizeF(7f, 15f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      this.BackColor = Color.White;
-      this.ClientSize = new Size(504, 481);
-      this.Controls.Add((Control) this.chkAudibleNotifications);
-      this.Controls.Add((Control) this.lblTimeServerUrl);
-      this.Controls.Add((Control) this.Label18);
-      this.Controls.Add((Control) this.Label20);
-      this.Controls.Add((Control) this.Label19);
-      this.Controls.Add((Control) this.btnSubtractSeconds);
-      this.Controls.Add((Control) this.Label17);
-      this.Controls.Add((Control) this.Label4);
-      this.Controls.Add((Control) this.lblMainTitle);
-      this.Controls.Add((Control) this.Label16);
-      this.Controls.Add((Control) this.btnAddSeconds);
-      this.Controls.Add((Control) this.btnRereadTime);
-      this.Controls.Add((Control) this.Label12);
-      this.Controls.Add((Control) this.Label14);
-      this.Controls.Add((Control) this.Label13);
-      this.Controls.Add((Control) this.Label8);
-      this.Controls.Add((Control) this.chkMakeTransparent);
-      this.Controls.Add((Control) this.Label15);
-      this.Controls.Add((Control) this.chkMakeTopmostWin);
-      this.Controls.Add((Control) this.chkRefreshBrowser);
-      this.Controls.Add((Control) this.Label11);
-      this.Controls.Add((Control) this.Label10);
-      this.Controls.Add((Control) this.Label9);
-      this.Controls.Add((Control) this.Label6);
-      this.Controls.Add((Control) this.Label7);
-      this.Controls.Add((Control) this.Label5);
-      this.Controls.Add((Control) this.txtSeconds);
-      this.Controls.Add((Control) this.PictureBox4);
-      this.Controls.Add((Control) this.txtMinutes);
-      this.Controls.Add((Control) this.PictureBox3);
-      this.Controls.Add((Control) this.txtHours);
-      this.Controls.Add((Control) this.PictureBox2);
-      this.Controls.Add((Control) this.btnStart);
-      this.Controls.Add((Control) this.btnOnOff);
-      this.Controls.Add((Control) this.lblSubTitle);
-      this.Controls.Add((Control) this.picLogo);
-      this.Controls.Add((Control) this.lblHeaderBackground);
-      this.Controls.Add((Control) this.lblTime);
-      this.Font = new Font("Calibri", 9.75f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.FormBorderStyle = FormBorderStyle.FixedSingle;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.Name = nameof (frmMain);
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Countdown App";
-      ((ISupportInitialize) this.PictureBox2).EndInit();
-      ((ISupportInitialize) this.picLogo).EndInit();
-      ((ISupportInitialize) this.PictureBox3).EndInit();
-      ((ISupportInitialize) this.PictureBox4).EndInit();
-      this.ResumeLayout(false);
-      this.PerformLayout();
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("lblHeaderBackground")]
+		private Label _lblHeaderBackground;
 
-    [field: AccessedThroughProperty("picLogo")]
-    internal virtual PictureBox picLogo { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("lblSubTitle")]
+		private Label _lblSubTitle;
 
-    [field: AccessedThroughProperty("lblMainTitle")]
-    internal virtual Label lblMainTitle { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("btnStart")]
+		private Button _btnStart;
 
-    [field: AccessedThroughProperty("lblHeaderBackground")]
-    internal virtual Label lblHeaderBackground { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("btnOnOff")]
+		private Button _btnOnOff;
 
-    [field: AccessedThroughProperty("lblSubTitle")]
-    internal virtual Label lblSubTitle { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("PictureBox2")]
+		private PictureBox _PictureBox2;
 
-    internal virtual Button btnStart
-    {
-      get => this._btnStart;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnStart_Click);
-        Button btnStart1 = this._btnStart;
-        if (btnStart1 != null)
-          btnStart1.Click -= eventHandler;
-        this._btnStart = value;
-        Button btnStart2 = this._btnStart;
-        if (btnStart2 == null)
-          return;
-        btnStart2.Click += eventHandler;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("txtHours")]
+		private TextBox _txtHours;
 
-    internal virtual Button btnOnOff
-    {
-      get => this._btnOnOff;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOnOff_Click);
-        Button btnOnOff1 = this._btnOnOff;
-        if (btnOnOff1 != null)
-          btnOnOff1.Click -= eventHandler;
-        this._btnOnOff = value;
-        Button btnOnOff2 = this._btnOnOff;
-        if (btnOnOff2 == null)
-          return;
-        btnOnOff2.Click += eventHandler;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("txtMinutes")]
+		private TextBox _txtMinutes;
 
-    [field: AccessedThroughProperty("PictureBox2")]
-    internal virtual PictureBox PictureBox2 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("PictureBox3")]
+		private PictureBox _PictureBox3;
 
-    internal virtual TextBox txtHours
-    {
-      get => this._txtHours;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler1 = new EventHandler(this.txtHours_GotFocus);
-        EventHandler eventHandler2 = new EventHandler(this.txtHours_LostFocus);
-        TextBox txtHours1 = this._txtHours;
-        if (txtHours1 != null)
-        {
-          txtHours1.GotFocus -= eventHandler1;
-          txtHours1.LostFocus -= eventHandler2;
-        }
-        this._txtHours = value;
-        TextBox txtHours2 = this._txtHours;
-        if (txtHours2 == null)
-          return;
-        txtHours2.GotFocus += eventHandler1;
-        txtHours2.LostFocus += eventHandler2;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("txtSeconds")]
+		private TextBox _txtSeconds;
 
-    internal virtual TextBox txtMinutes
-    {
-      get => this._txtMinutes;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler1 = new EventHandler(this.txtMinutes_GotFocus);
-        EventHandler eventHandler2 = new EventHandler(this.txtMinutes_LostFocus);
-        TextBox txtMinutes1 = this._txtMinutes;
-        if (txtMinutes1 != null)
-        {
-          txtMinutes1.GotFocus -= eventHandler1;
-          txtMinutes1.LostFocus -= eventHandler2;
-        }
-        this._txtMinutes = value;
-        TextBox txtMinutes2 = this._txtMinutes;
-        if (txtMinutes2 == null)
-          return;
-        txtMinutes2.GotFocus += eventHandler1;
-        txtMinutes2.LostFocus += eventHandler2;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("PictureBox4")]
+		private PictureBox _PictureBox4;
 
-    [field: AccessedThroughProperty("PictureBox3")]
-    internal virtual PictureBox PictureBox3 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label5")]
+		private Label _Label5;
 
-    internal virtual TextBox txtSeconds
-    {
-      get => this._txtSeconds;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler1 = new EventHandler(this.txtSeconds_GotFocus);
-        EventHandler eventHandler2 = new EventHandler(this.txtSeconds_LostFocus);
-        TextBox txtSeconds1 = this._txtSeconds;
-        if (txtSeconds1 != null)
-        {
-          txtSeconds1.GotFocus -= eventHandler1;
-          txtSeconds1.LostFocus -= eventHandler2;
-        }
-        this._txtSeconds = value;
-        TextBox txtSeconds2 = this._txtSeconds;
-        if (txtSeconds2 == null)
-          return;
-        txtSeconds2.GotFocus += eventHandler1;
-        txtSeconds2.LostFocus += eventHandler2;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label6")]
+		private Label _Label6;
 
-    [field: AccessedThroughProperty("PictureBox4")]
-    internal virtual PictureBox PictureBox4 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label7")]
+		private Label _Label7;
 
-    [field: AccessedThroughProperty("Label5")]
-    internal virtual Label Label5 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label11")]
+		private Label _Label11;
 
-    [field: AccessedThroughProperty("Label6")]
-    internal virtual Label Label6 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label10")]
+		private Label _Label10;
 
-    [field: AccessedThroughProperty("Label7")]
-    internal virtual Label Label7 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label9")]
+		private Label _Label9;
 
-    [field: AccessedThroughProperty("Label11")]
-    internal virtual Label Label11 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("lblTime")]
+		private Label _lblTime;
 
-    [field: AccessedThroughProperty("Label10")]
-    internal virtual Label Label10 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label14")]
+		private Label _Label14;
 
-    [field: AccessedThroughProperty("Label9")]
-    internal virtual Label Label9 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label13")]
+		private Label _Label13;
 
-    [field: AccessedThroughProperty("lblTime")]
-    internal virtual Label lblTime { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label8")]
+		private Label _Label8;
 
-    [field: AccessedThroughProperty("Label14")]
-    internal virtual Label Label14 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("chkMakeTransparent")]
+		private CheckBox _chkMakeTransparent;
 
-    [field: AccessedThroughProperty("Label13")]
-    internal virtual Label Label13 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label15")]
+		private Label _Label15;
 
-    [field: AccessedThroughProperty("Label8")]
-    internal virtual Label Label8 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("chkMakeTopmostWin")]
+		private CheckBox _chkMakeTopmostWin;
 
-    [field: AccessedThroughProperty("chkMakeTransparent")]
-    internal virtual CheckBox chkMakeTransparent { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("chkRefreshBrowser")]
+		private CheckBox _chkRefreshBrowser;
 
-    [field: AccessedThroughProperty("Label15")]
-    internal virtual Label Label15 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label12")]
+		private Label _Label12;
 
-    [field: AccessedThroughProperty("chkMakeTopmostWin")]
-    internal virtual CheckBox chkMakeTopmostWin { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("btnRereadTime")]
+		private Button _btnRereadTime;
 
-    [field: AccessedThroughProperty("chkRefreshBrowser")]
-    internal virtual CheckBox chkRefreshBrowser { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("btnAddSeconds")]
+		private Button _btnAddSeconds;
 
-    [field: AccessedThroughProperty("Label12")]
-    internal virtual Label Label12 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label16")]
+		private Label _Label16;
 
-    internal virtual Button btnRereadTime
-    {
-      get => this._btnRereadTime;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnRereadTime_Click);
-        Button btnRereadTime1 = this._btnRereadTime;
-        if (btnRereadTime1 != null)
-          btnRereadTime1.Click -= eventHandler;
-        this._btnRereadTime = value;
-        Button btnRereadTime2 = this._btnRereadTime;
-        if (btnRereadTime2 == null)
-          return;
-        btnRereadTime2.Click += eventHandler;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label4")]
+		private Label _Label4;
 
-    internal virtual Button btnAddSeconds
-    {
-      get => this._btnAddSeconds;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAddSeconds_Click);
-        Button btnAddSeconds1 = this._btnAddSeconds;
-        if (btnAddSeconds1 != null)
-          btnAddSeconds1.Click -= eventHandler;
-        this._btnAddSeconds = value;
-        Button btnAddSeconds2 = this._btnAddSeconds;
-        if (btnAddSeconds2 == null)
-          return;
-        btnAddSeconds2.Click += eventHandler;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label17")]
+		private Label _Label17;
 
-    [field: AccessedThroughProperty("Label16")]
-    internal virtual Label Label16 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("btnSubtractSeconds")]
+		private Button _btnSubtractSeconds;
 
-    [field: AccessedThroughProperty("Label4")]
-    internal virtual Label Label4 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label19")]
+		private Label _Label19;
 
-    [field: AccessedThroughProperty("Label17")]
-    internal virtual Label Label17 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label20")]
+		private Label _Label20;
 
-    internal virtual Button btnSubtractSeconds
-    {
-      get => this._btnSubtractSeconds;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSubtractSeconds_Click);
-        Button btnSubtractSeconds1 = this._btnSubtractSeconds;
-        if (btnSubtractSeconds1 != null)
-          btnSubtractSeconds1.Click -= eventHandler;
-        this._btnSubtractSeconds = value;
-        Button btnSubtractSeconds2 = this._btnSubtractSeconds;
-        if (btnSubtractSeconds2 == null)
-          return;
-        btnSubtractSeconds2.Click += eventHandler;
-      }
-    }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("Label18")]
+		private Label _Label18;
 
-    [field: AccessedThroughProperty("Label19")]
-    internal virtual Label Label19 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("lblTimeServerUrl")]
+		private Label _lblTimeServerUrl;
 
-    [field: AccessedThroughProperty("Label20")]
-    internal virtual Label Label20 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("tmrTime")]
+		private Timer _tmrTime;
 
-    [field: AccessedThroughProperty("Label18")]
-    internal virtual Label Label18 { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[CompilerGenerated]
+		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+		[AccessedThroughProperty("chkAudibleNotifications")]
+		private CheckBox _chkAudibleNotifications;
 
-    [field: AccessedThroughProperty("lblTimeServerUrl")]
-    internal virtual Label lblTimeServerUrl { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		private bool FlagInitialTimeSynced;
 
-    internal virtual Timer tmrTime
-    {
-      get => this._tmrTime;
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.tmrTime_Tick);
-        Timer tmrTime1 = this._tmrTime;
-        if (tmrTime1 != null)
-          tmrTime1.Tick -= eventHandler;
-        this._tmrTime = value;
-        Timer tmrTime2 = this._tmrTime;
-        if (tmrTime2 == null)
-          return;
-        tmrTime2.Tick += eventHandler;
-      }
-    }
+		[field: AccessedThroughProperty("picLogo")]
+		internal virtual PictureBox picLogo
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    [field: AccessedThroughProperty("chkAudibleNotifications")]
-    internal virtual CheckBox chkAudibleNotifications { get; [MethodImpl(MethodImplOptions.Synchronized)] set; }
+		[field: AccessedThroughProperty("lblMainTitle")]
+		internal virtual Label lblMainTitle
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void btnAddSeconds_Click(object sender, EventArgs e)
-    {
-      mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(1.0);
-      this.lblTime.ForeColor = Color.Green;
-    }
+		[field: AccessedThroughProperty("lblHeaderBackground")]
+		internal virtual Label lblHeaderBackground
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void btnOnOff_Click(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.btnOnOff.Text, "On", false) == 0)
-      {
-        this.btnOnOff.Text = "Off";
-        this.btnOnOff.BackColor = Color.Green;
-        this.txtHours.Enabled = true;
-        this.txtMinutes.Enabled = true;
-        this.txtSeconds.Enabled = true;
-      }
-      else
-      {
-        this.btnOnOff.Text = "On";
-        this.btnOnOff.BackColor = Color.White;
-        this.txtHours.Enabled = false;
-        this.txtMinutes.Enabled = false;
-        this.txtSeconds.Enabled = false;
-      }
-    }
+		[field: AccessedThroughProperty("lblSubTitle")]
+		internal virtual Label lblSubTitle
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void btnRereadTime_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        mdlSharedFunctions.CurrentTime = mdlSharedFunctions.GetDateTimeNtp();
-        this.lblTime.ForeColor = Color.Green;
-      }
-      catch (Exception ex)
-      {
-        ProjectData.SetProjectError(ex);
-        Exception exception = ex;
-        mdlSharedFunctions.DumpErrLog(this.Name + ".btnRereadTime_Click", exception.Message);
-        int num = (int) MessageBox.Show("Countdown App encountered the following error while syncing the time.\r\n" + exception.Message, "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-        ProjectData.ClearProjectError();
-      }
-    }
+		internal virtual Button btnStart
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _btnStart;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = btnStart_Click;
+				Button button = _btnStart;
+				if (button != null)
+				{
+					button.Click -= value2;
+				}
+				_btnStart = value;
+				button = _btnStart;
+				if (button != null)
+				{
+					button.Click += value2;
+				}
+			}
+		}
 
-    private void btnStart_Click(object sender, EventArgs e)
-    {
-      mdlSharedFunctions.CountdownTimeInSeconds = checked (Conversions.ToInteger(this.txtHours.Text) * 3600 + Conversions.ToInteger(this.txtMinutes.Text) * 60 + Conversions.ToInteger(this.txtSeconds.Text));
-      if (mdlSharedFunctions.CountdownTimeInSeconds > 0)
-      {
-        mdlSharedFunctions.MakeTopmostWin = this.chkMakeTopmostWin.Checked;
-        mdlSharedFunctions.RefreshBrowser = this.chkRefreshBrowser.Checked;
-        mdlSharedFunctions.MakeTransparent = this.chkMakeTransparent.Checked;
-        mdlSharedFunctions.AllowAudibleNotifications = this.chkAudibleNotifications.Checked;
-        MyProject.Forms.frmCountdown.Show();
-        this.Hide();
-      }
-      else
-      {
-        int num = (int) MessageBox.Show("You will have to enter a time duration before starting the countdown timer.", "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-      }
-    }
+		internal virtual Button btnOnOff
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _btnOnOff;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = btnOnOff_Click;
+				Button button = _btnOnOff;
+				if (button != null)
+				{
+					button.Click -= value2;
+				}
+				_btnOnOff = value;
+				button = _btnOnOff;
+				if (button != null)
+				{
+					button.Click += value2;
+				}
+			}
+		}
 
-    private void btnSubtractSeconds_Click(object sender, EventArgs e)
-    {
-      mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(-1.0);
-      this.lblTime.ForeColor = Color.Green;
-    }
+		[field: AccessedThroughProperty("PictureBox2")]
+		internal virtual PictureBox PictureBox2
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private void frmMain_Closing(object sender, CancelEventArgs e)
-    {
-      try
-      {
-        if (MessageBox.Show("Are you sure you want to exit Countdown App?", "Countdown App", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-          ProjectData.EndApp();
-        else
-          e.Cancel = true;
-      }
-      catch (Exception ex)
-      {
-        ProjectData.SetProjectError(ex);
-        mdlSharedFunctions.DumpErrLog(this.Name + ".frmMain_Closing", ex.Message);
-        ProjectData.EndApp();
-        ProjectData.ClearProjectError();
-      }
-    }
+		internal virtual TextBox txtHours
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _txtHours;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = txtHours_GotFocus;
+				EventHandler value3 = txtHours_LostFocus;
+				TextBox textBox = _txtHours;
+				if (textBox != null)
+				{
+					textBox.GotFocus -= value2;
+					textBox.LostFocus -= value3;
+				}
+				_txtHours = value;
+				textBox = _txtHours;
+				if (textBox != null)
+				{
+					textBox.GotFocus += value2;
+					textBox.LostFocus += value3;
+				}
+			}
+		}
 
-    private void frmMain_Load(object sender, EventArgs e)
-    {
-      this.txtHours.Enabled = false;
-      this.txtMinutes.Enabled = false;
-      this.txtSeconds.Enabled = false;
-      this.lblTimeServerUrl.Text = mdlSystemParameters.TimeServerUrl;
-      mdlSharedFunctions.CurrentTime = DateAndTime.Now;
-      this.lblTime.Text = Strings.Format((object) mdlSharedFunctions.CurrentTime, "HH:mm:ss");
-      this.tmrTime.Enabled = true;
-      this.lblHeaderBackground.BackColor = mdlSystemParameters.HeaderBackColor;
-      this.lblMainTitle.BackColor = mdlSystemParameters.HeaderBackColor;
-      this.lblSubTitle.BackColor = mdlSystemParameters.HeaderBackColor;
-      this.picLogo.BackColor = mdlSystemParameters.HeaderBackColor;
-    }
+		internal virtual TextBox txtMinutes
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _txtMinutes;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = txtMinutes_GotFocus;
+				EventHandler value3 = txtMinutes_LostFocus;
+				TextBox textBox = _txtMinutes;
+				if (textBox != null)
+				{
+					textBox.GotFocus -= value2;
+					textBox.LostFocus -= value3;
+				}
+				_txtMinutes = value;
+				textBox = _txtMinutes;
+				if (textBox != null)
+				{
+					textBox.GotFocus += value2;
+					textBox.LostFocus += value3;
+				}
+			}
+		}
 
-    private void tmrTime_Tick(object sender, EventArgs e)
-    {
-      try
-      {
-        if (this.FlagInitialTimeSynced)
-        {
-          mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(1.0);
-        }
-        else
-        {
-          mdlSharedFunctions.CurrentTime = mdlSharedFunctions.GetDateTimeNtp();
-          this.FlagInitialTimeSynced = true;
-        }
-        this.lblTime.ForeColor = Color.Gray;
-        this.lblTime.Text = Strings.Format((object) mdlSharedFunctions.CurrentTime, "HH:mm:ss");
-      }
-      catch (Exception ex)
-      {
-        ProjectData.SetProjectError(ex);
-        Exception exception = ex;
-        mdlSharedFunctions.DumpErrLog(this.Name + ".tmrTime_Tick", exception.Message);
-        int num = (int) MessageBox.Show("Countdown App has encountered the following error.\r\n" + exception.Message, "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-        ProjectData.ClearProjectError();
-      }
-    }
+		[field: AccessedThroughProperty("PictureBox3")]
+		internal virtual PictureBox PictureBox3
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void txtHours_GotFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtHours.Text, "00", false) != 0)
-        return;
-      this.txtHours.Text = "";
-    }
+		internal virtual TextBox txtSeconds
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _txtSeconds;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = txtSeconds_GotFocus;
+				EventHandler value3 = txtSeconds_LostFocus;
+				TextBox textBox = _txtSeconds;
+				if (textBox != null)
+				{
+					textBox.GotFocus -= value2;
+					textBox.LostFocus -= value3;
+				}
+				_txtSeconds = value;
+				textBox = _txtSeconds;
+				if (textBox != null)
+				{
+					textBox.GotFocus += value2;
+					textBox.LostFocus += value3;
+				}
+			}
+		}
 
-    private void txtHours_LostFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtHours.Text, "", false) != 0 && Versioned.IsNumeric((object) this.txtHours.Text))
-        return;
-      this.txtHours.Text = "00";
-    }
+		[field: AccessedThroughProperty("PictureBox4")]
+		internal virtual PictureBox PictureBox4
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void txtMinutes_GotFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtMinutes.Text, "00", false) != 0)
-        return;
-      this.txtMinutes.Text = "";
-    }
+		[field: AccessedThroughProperty("Label5")]
+		internal virtual Label Label5
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void txtMinutes_LostFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtMinutes.Text, "", false) != 0 && Versioned.IsNumeric((object) this.txtMinutes.Text))
-        return;
-      this.txtMinutes.Text = "00";
-    }
+		[field: AccessedThroughProperty("Label6")]
+		internal virtual Label Label6
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void txtSeconds_GotFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtSeconds.Text, "00", false) != 0)
-        return;
-      this.txtSeconds.Text = "";
-    }
+		[field: AccessedThroughProperty("Label7")]
+		internal virtual Label Label7
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
 
-    private void txtSeconds_LostFocus(object sender, EventArgs e)
-    {
-      if (Operators.CompareString(this.txtSeconds.Text, "", false) != 0 && Versioned.IsNumeric((object) this.txtSeconds.Text))
-        return;
-      this.txtSeconds.Text = "00";
-    }
-  }
+		[field: AccessedThroughProperty("Label11")]
+		internal virtual Label Label11
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label10")]
+		internal virtual Label Label10
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label9")]
+		internal virtual Label Label9
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("lblTime")]
+		internal virtual Label lblTime
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label14")]
+		internal virtual Label Label14
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label13")]
+		internal virtual Label Label13
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label8")]
+		internal virtual Label Label8
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("chkMakeTransparent")]
+		internal virtual CheckBox chkMakeTransparent
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label15")]
+		internal virtual Label Label15
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("chkMakeTopmostWin")]
+		internal virtual CheckBox chkMakeTopmostWin
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("chkRefreshBrowser")]
+		internal virtual CheckBox chkRefreshBrowser
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label12")]
+		internal virtual Label Label12
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		internal virtual Button btnRereadTime
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _btnRereadTime;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = btnRereadTime_Click;
+				Button button = _btnRereadTime;
+				if (button != null)
+				{
+					button.Click -= value2;
+				}
+				_btnRereadTime = value;
+				button = _btnRereadTime;
+				if (button != null)
+				{
+					button.Click += value2;
+				}
+			}
+		}
+
+		internal virtual Button btnAddSeconds
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _btnAddSeconds;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = btnAddSeconds_Click;
+				Button button = _btnAddSeconds;
+				if (button != null)
+				{
+					button.Click -= value2;
+				}
+				_btnAddSeconds = value;
+				button = _btnAddSeconds;
+				if (button != null)
+				{
+					button.Click += value2;
+				}
+			}
+		}
+
+		[field: AccessedThroughProperty("Label16")]
+		internal virtual Label Label16
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label4")]
+		internal virtual Label Label4
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label17")]
+		internal virtual Label Label17
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		internal virtual Button btnSubtractSeconds
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _btnSubtractSeconds;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = btnSubtractSeconds_Click;
+				Button button = _btnSubtractSeconds;
+				if (button != null)
+				{
+					button.Click -= value2;
+				}
+				_btnSubtractSeconds = value;
+				button = _btnSubtractSeconds;
+				if (button != null)
+				{
+					button.Click += value2;
+				}
+			}
+		}
+
+		[field: AccessedThroughProperty("Label19")]
+		internal virtual Label Label19
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label20")]
+		internal virtual Label Label20
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("Label18")]
+		internal virtual Label Label18
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		[field: AccessedThroughProperty("lblTimeServerUrl")]
+		internal virtual Label lblTimeServerUrl
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		internal virtual Timer tmrTime
+		{
+			[CompilerGenerated]
+			get
+			{
+				return _tmrTime;
+			}
+			[MethodImpl(MethodImplOptions.Synchronized)]
+			[CompilerGenerated]
+			set
+			{
+				EventHandler value2 = tmrTime_Tick;
+				Timer timer = _tmrTime;
+				if (timer != null)
+				{
+					timer.Tick -= value2;
+				}
+				_tmrTime = value;
+				timer = _tmrTime;
+				if (timer != null)
+				{
+					timer.Tick += value2;
+				}
+			}
+		}
+
+		[field: AccessedThroughProperty("chkAudibleNotifications")]
+		internal virtual CheckBox chkAudibleNotifications
+		{
+			get; [MethodImpl(MethodImplOptions.Synchronized)]
+			set;
+		}
+
+		public frmMain()
+		{
+			base.Closing += frmMain_Closing;
+			base.Load += frmMain_Load;
+			FlagInitialTimeSynced = false;
+			InitializeComponent();
+		}
+
+		[DebuggerNonUserCode]
+		protected override void Dispose(bool disposing)
+		{
+			try
+			{
+				if (disposing && components != null)
+				{
+					components.Dispose();
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
+			}
+		}
+
+		[System.Diagnostics.DebuggerStepThrough]
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CountdownApp.frmMain));
+			lblMainTitle = new System.Windows.Forms.Label();
+			lblHeaderBackground = new System.Windows.Forms.Label();
+			lblSubTitle = new System.Windows.Forms.Label();
+			btnStart = new System.Windows.Forms.Button();
+			btnOnOff = new System.Windows.Forms.Button();
+			PictureBox2 = new System.Windows.Forms.PictureBox();
+			picLogo = new System.Windows.Forms.PictureBox();
+			txtHours = new System.Windows.Forms.TextBox();
+			txtMinutes = new System.Windows.Forms.TextBox();
+			PictureBox3 = new System.Windows.Forms.PictureBox();
+			txtSeconds = new System.Windows.Forms.TextBox();
+			PictureBox4 = new System.Windows.Forms.PictureBox();
+			Label5 = new System.Windows.Forms.Label();
+			Label6 = new System.Windows.Forms.Label();
+			Label7 = new System.Windows.Forms.Label();
+			Label11 = new System.Windows.Forms.Label();
+			Label10 = new System.Windows.Forms.Label();
+			Label9 = new System.Windows.Forms.Label();
+			lblTime = new System.Windows.Forms.Label();
+			Label14 = new System.Windows.Forms.Label();
+			Label13 = new System.Windows.Forms.Label();
+			Label8 = new System.Windows.Forms.Label();
+			chkMakeTransparent = new System.Windows.Forms.CheckBox();
+			Label15 = new System.Windows.Forms.Label();
+			chkMakeTopmostWin = new System.Windows.Forms.CheckBox();
+			chkRefreshBrowser = new System.Windows.Forms.CheckBox();
+			Label12 = new System.Windows.Forms.Label();
+			btnRereadTime = new System.Windows.Forms.Button();
+			btnAddSeconds = new System.Windows.Forms.Button();
+			Label16 = new System.Windows.Forms.Label();
+			Label4 = new System.Windows.Forms.Label();
+			Label17 = new System.Windows.Forms.Label();
+			btnSubtractSeconds = new System.Windows.Forms.Button();
+			Label19 = new System.Windows.Forms.Label();
+			Label20 = new System.Windows.Forms.Label();
+			Label18 = new System.Windows.Forms.Label();
+			lblTimeServerUrl = new System.Windows.Forms.Label();
+			tmrTime = new System.Windows.Forms.Timer(components);
+			chkAudibleNotifications = new System.Windows.Forms.CheckBox();
+			((System.ComponentModel.ISupportInitialize)PictureBox2).BeginInit();
+			((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+			((System.ComponentModel.ISupportInitialize)PictureBox3).BeginInit();
+			((System.ComponentModel.ISupportInitialize)PictureBox4).BeginInit();
+			SuspendLayout();
+			lblMainTitle.AutoSize = true;
+			lblMainTitle.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+			lblMainTitle.Font = new System.Drawing.Font("Calibri", 20.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			lblMainTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+			lblMainTitle.Location = new System.Drawing.Point(5, 9);
+			lblMainTitle.Name = "lblMainTitle";
+			lblMainTitle.Size = new System.Drawing.Size(194, 33);
+			lblMainTitle.TabIndex = 3;
+			lblMainTitle.Text = "Countdown App";
+			lblHeaderBackground.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+			lblHeaderBackground.Font = new System.Drawing.Font("Calibri", 14.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			lblHeaderBackground.ForeColor = System.Drawing.Color.White;
+			lblHeaderBackground.Location = new System.Drawing.Point(0, 0);
+			lblHeaderBackground.Name = "lblHeaderBackground";
+			lblHeaderBackground.Size = new System.Drawing.Size(520, 80);
+			lblHeaderBackground.TabIndex = 5;
+			lblSubTitle.AutoSize = true;
+			lblSubTitle.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+			lblSubTitle.Font = new System.Drawing.Font("Calibri", 14.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			lblSubTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+			lblSubTitle.Location = new System.Drawing.Point(5, 40);
+			lblSubTitle.Name = "lblSubTitle";
+			lblSubTitle.Size = new System.Drawing.Size(360, 23);
+			lblSubTitle.TabIndex = 6;
+			lblSubTitle.Text = "Karena semua orang butuh kepastian (waktu)";
+			btnStart.BackColor = System.Drawing.Color.FromArgb(17, 85, 204);
+			btnStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(17, 85, 204);
+			btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			btnStart.Font = new System.Drawing.Font("Calibri", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			btnStart.ForeColor = System.Drawing.Color.White;
+			btnStart.Location = new System.Drawing.Point(395, 93);
+			btnStart.Name = "btnStart";
+			btnStart.Size = new System.Drawing.Size(97, 25);
+			btnStart.TabIndex = 27;
+			btnStart.Tag = "Start Countdown";
+			btnStart.Text = "Mulai Hitung";
+			btnStart.UseVisualStyleBackColor = false;
+			btnOnOff.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+			btnOnOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			btnOnOff.Font = new System.Drawing.Font("Calibri", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			btnOnOff.Location = new System.Drawing.Point(330, 93);
+			btnOnOff.Name = "btnOnOff";
+			btnOnOff.Size = new System.Drawing.Size(56, 25);
+			btnOnOff.TabIndex = 26;
+			btnOnOff.Text = "On";
+			btnOnOff.UseVisualStyleBackColor = true;
+			PictureBox2.Image = CountdownApp.My.Resources.Resources.Rounded_Rectangle;
+			PictureBox2.Location = new System.Drawing.Point(157, 145);
+			PictureBox2.Name = "PictureBox2";
+			PictureBox2.Size = new System.Drawing.Size(97, 92);
+			PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			PictureBox2.TabIndex = 30;
+			PictureBox2.TabStop = false;
+			picLogo.BackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+			picLogo.Image = CountdownApp.My.Resources.Resources.Logoblue;
+			picLogo.Location = new System.Drawing.Point(390, 12);
+			picLogo.Name = "picLogo";
+			picLogo.Size = new System.Drawing.Size(102, 56);
+			picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			picLogo.TabIndex = 4;
+			picLogo.TabStop = false;
+			txtHours.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			txtHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			txtHours.Font = new System.Drawing.Font("Calibri", 36f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			txtHours.Location = new System.Drawing.Point(176, 162);
+			txtHours.Name = "txtHours";
+			txtHours.Size = new System.Drawing.Size(59, 59);
+			txtHours.TabIndex = 31;
+			txtHours.Text = "00";
+			txtHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			txtMinutes.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			txtMinutes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			txtMinutes.Font = new System.Drawing.Font("Calibri", 36f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			txtMinutes.Location = new System.Drawing.Point(294, 162);
+			txtMinutes.Name = "txtMinutes";
+			txtMinutes.Size = new System.Drawing.Size(59, 59);
+			txtMinutes.TabIndex = 33;
+			txtMinutes.Text = "00";
+			txtMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			PictureBox3.Image = CountdownApp.My.Resources.Resources.Rounded_Rectangle;
+			PictureBox3.Location = new System.Drawing.Point(275, 145);
+			PictureBox3.Name = "PictureBox3";
+			PictureBox3.Size = new System.Drawing.Size(97, 92);
+			PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			PictureBox3.TabIndex = 32;
+			PictureBox3.TabStop = false;
+			txtSeconds.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			txtSeconds.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			txtSeconds.Font = new System.Drawing.Font("Calibri", 36f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			txtSeconds.Location = new System.Drawing.Point(414, 162);
+			txtSeconds.Name = "txtSeconds";
+			txtSeconds.Size = new System.Drawing.Size(59, 59);
+			txtSeconds.TabIndex = 35;
+			txtSeconds.Text = "00";
+			txtSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			PictureBox4.Image = CountdownApp.My.Resources.Resources.Rounded_Rectangle;
+			PictureBox4.Location = new System.Drawing.Point(395, 145);
+			PictureBox4.Name = "PictureBox4";
+			PictureBox4.Size = new System.Drawing.Size(97, 92);
+			PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			PictureBox4.TabIndex = 34;
+			PictureBox4.TabStop = false;
+			Label5.AutoSize = true;
+			Label5.Location = new System.Drawing.Point(5, 98);
+			Label5.Name = "Label5";
+			Label5.Size = new System.Drawing.Size(214, 15);
+			Label5.TabIndex = 36;
+			Label5.Tag = "Automatic countdown? (click button)";
+			Label5.Text = "Hitung Otomatis? (Klik Tombol on/off)";
+			Label6.Location = new System.Drawing.Point(5, 186);
+			Label6.Name = "Label6";
+			Label6.Size = new System.Drawing.Size(116, 51);
+			Label6.TabIndex = 38;
+			Label6.Tag = "(time reference to countdown)";
+			Label6.Text = "(Waktu target Refresh untuk Countdown)";
+			Label7.Font = new System.Drawing.Font("Calibri", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			Label7.Location = new System.Drawing.Point(5, 145);
+			Label7.Name = "Label7";
+			Label7.Size = new System.Drawing.Size(128, 41);
+			Label7.TabIndex = 37;
+			Label7.Tag = "Countdown to what time?";
+			Label7.Text = "Countdown Ke Jam Berapa?";
+			Label11.AutoSize = true;
+			Label11.Location = new System.Drawing.Point(418, 240);
+			Label11.Name = "Label11";
+			Label11.Size = new System.Drawing.Size(51, 15);
+			Label11.TabIndex = 41;
+			Label11.Tag = "Seconds";
+			Label11.Text = "Detik (s)";
+			Label10.AutoSize = true;
+			Label10.Location = new System.Drawing.Point(288, 240);
+			Label10.Name = "Label10";
+			Label10.Size = new System.Drawing.Size(70, 15);
+			Label10.TabIndex = 40;
+			Label10.Tag = "Minutes";
+			Label10.Text = "Menit (mts)";
+			Label9.AutoSize = true;
+			Label9.Location = new System.Drawing.Point(173, 240);
+			Label9.Name = "Label9";
+			Label9.Size = new System.Drawing.Size(65, 15);
+			Label9.TabIndex = 39;
+			Label9.Tag = "Hours";
+			Label9.Text = "Jam (hour)";
+			lblTime.Font = new System.Drawing.Font("Calibri", 36f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			lblTime.ForeColor = System.Drawing.Color.Gray;
+			lblTime.Location = new System.Drawing.Point(277, 322);
+			lblTime.Name = "lblTime";
+			lblTime.Size = new System.Drawing.Size(195, 56);
+			lblTime.TabIndex = 50;
+			lblTime.Text = "00:00:00";
+			lblTime.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			Label14.AutoSize = true;
+			Label14.Font = new System.Drawing.Font("Calibri", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			Label14.Location = new System.Drawing.Point(274, 301);
+			Label14.Name = "Label14";
+			Label14.Size = new System.Drawing.Size(201, 19);
+			Label14.TabIndex = 49;
+			Label14.Text = "Time on Target Server GMT+7";
+			Label13.BackColor = System.Drawing.Color.LightGray;
+			Label13.Location = new System.Drawing.Point(5, 300);
+			Label13.Name = "Label13";
+			Label13.Size = new System.Drawing.Size(241, 1);
+			Label13.TabIndex = 48;
+			Label8.AutoSize = true;
+			Label8.Font = new System.Drawing.Font("Calibri", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			Label8.Location = new System.Drawing.Point(5, 274);
+			Label8.Name = "Label8";
+			Label8.Size = new System.Drawing.Size(199, 15);
+			Label8.TabIndex = 47;
+			Label8.Tag = "What Features You Want to turn on?";
+			Label8.Text = "Fitur apa yang mau kamu nyalakan?";
+			chkMakeTransparent.AutoSize = true;
+			chkMakeTransparent.Location = new System.Drawing.Point(11, 359);
+			chkMakeTransparent.Name = "chkMakeTransparent";
+			chkMakeTransparent.Size = new System.Drawing.Size(143, 19);
+			chkMakeTransparent.TabIndex = 45;
+			chkMakeTransparent.Tag = "Make Window Transparent";
+			chkMakeTransparent.Text = "Windows transparan";
+			chkMakeTransparent.UseVisualStyleBackColor = true;
+			Label15.BackColor = System.Drawing.Color.LightGray;
+			Label15.Location = new System.Drawing.Point(5, 262);
+			Label15.Name = "Label15";
+			Label15.Size = new System.Drawing.Size(492, 1);
+			Label15.TabIndex = 46;
+			chkMakeTopmostWin.AutoSize = true;
+			chkMakeTopmostWin.Location = new System.Drawing.Point(11, 333);
+			chkMakeTopmostWin.Name = "chkMakeTopmostWin";
+			chkMakeTopmostWin.Size = new System.Drawing.Size(183, 19);
+			chkMakeTopmostWin.TabIndex = 44;
+			chkMakeTopmostWin.Tag = "Show Timer Window on Top";
+			chkMakeTopmostWin.Text = "Tampilkan di Depan browser";
+			chkMakeTopmostWin.UseVisualStyleBackColor = true;
+			chkRefreshBrowser.AutoSize = true;
+			chkRefreshBrowser.Location = new System.Drawing.Point(11, 307);
+			chkRefreshBrowser.Name = "chkRefreshBrowser";
+			chkRefreshBrowser.Size = new System.Drawing.Size(180, 19);
+			chkRefreshBrowser.TabIndex = 43;
+			chkRefreshBrowser.Tag = "Countdown to 0 -> Refresh";
+			chkRefreshBrowser.Text = "Bila Countdown 0 -> Refresh";
+			chkRefreshBrowser.UseVisualStyleBackColor = true;
+			Label12.BackColor = System.Drawing.Color.LightGray;
+			Label12.Location = new System.Drawing.Point(5, 411);
+			Label12.Name = "Label12";
+			Label12.Size = new System.Drawing.Size(492, 1);
+			Label12.TabIndex = 51;
+			btnRereadTime.BackColor = System.Drawing.Color.FromArgb(17, 85, 204);
+			btnRereadTime.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(17, 85, 204);
+			btnRereadTime.FlatAppearance.BorderSize = 0;
+			btnRereadTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			btnRereadTime.Font = new System.Drawing.Font("Calibri", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			btnRereadTime.ForeColor = System.Drawing.Color.White;
+			btnRereadTime.Location = new System.Drawing.Point(323, 274);
+			btnRereadTime.Name = "btnRereadTime";
+			btnRereadTime.Size = new System.Drawing.Size(102, 20);
+			btnRereadTime.TabIndex = 52;
+			btnRereadTime.Text = "Re-read Time";
+			btnRereadTime.UseVisualStyleBackColor = false;
+			btnAddSeconds.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			btnAddSeconds.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+			btnAddSeconds.FlatAppearance.BorderSize = 0;
+			btnAddSeconds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			btnAddSeconds.Font = new System.Drawing.Font("Calibri", 9f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			btnAddSeconds.Location = new System.Drawing.Point(452, 386);
+			btnAddSeconds.Name = "btnAddSeconds";
+			btnAddSeconds.Size = new System.Drawing.Size(17, 18);
+			btnAddSeconds.TabIndex = 53;
+			btnAddSeconds.Text = "+";
+			btnAddSeconds.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			btnAddSeconds.UseVisualStyleBackColor = false;
+			Label16.AutoSize = true;
+			Label16.Location = new System.Drawing.Point(252, 388);
+			Label16.Name = "Label16";
+			Label16.Size = new System.Drawing.Size(198, 15);
+			Label16.TabIndex = 54;
+			Label16.Tag = "";
+			Label16.Text = "Click + / - to adjust seconds (detik):";
+			Label4.BackColor = System.Drawing.Color.LightGray;
+			Label4.Location = new System.Drawing.Point(5, 129);
+			Label4.Name = "Label4";
+			Label4.Size = new System.Drawing.Size(492, 1);
+			Label4.TabIndex = 55;
+			Label17.BackColor = System.Drawing.Color.LightGray;
+			Label17.Location = new System.Drawing.Point(245, 262);
+			Label17.Name = "Label17";
+			Label17.Size = new System.Drawing.Size(1, 149);
+			Label17.TabIndex = 56;
+			btnSubtractSeconds.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			btnSubtractSeconds.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+			btnSubtractSeconds.FlatAppearance.BorderSize = 0;
+			btnSubtractSeconds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			btnSubtractSeconds.Font = new System.Drawing.Font("Calibri", 9f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+			btnSubtractSeconds.Location = new System.Drawing.Point(475, 386);
+			btnSubtractSeconds.Name = "btnSubtractSeconds";
+			btnSubtractSeconds.Size = new System.Drawing.Size(17, 18);
+			btnSubtractSeconds.TabIndex = 57;
+			btnSubtractSeconds.Text = "-";
+			btnSubtractSeconds.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			btnSubtractSeconds.UseVisualStyleBackColor = false;
+			Label19.BackColor = System.Drawing.Color.LightGray;
+			Label19.Location = new System.Drawing.Point(5, 443);
+			Label19.Name = "Label19";
+			Label19.Size = new System.Drawing.Size(492, 1);
+			Label19.TabIndex = 59;
+			Label20.AutoSize = true;
+			Label20.Location = new System.Drawing.Point(5, 420);
+			Label20.Name = "Label20";
+			Label20.Size = new System.Drawing.Size(173, 15);
+			Label20.TabIndex = 60;
+			Label20.Tag = "";
+			Label20.Text = "Target Server URL to Read time:";
+			Label18.Font = new System.Drawing.Font("Calibri", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			Label18.Location = new System.Drawing.Point(5, 449);
+			Label18.Name = "Label18";
+			Label18.Size = new System.Drawing.Size(470, 28);
+			Label18.TabIndex = 61;
+			Label18.Tag = "";
+			Label18.Text = "Program ini sudah dibajak sama pikapi mwahahahaa";
+			lblTimeServerUrl.AutoSize = true;
+			lblTimeServerUrl.BackColor = System.Drawing.Color.FromArgb(201, 218, 248);
+			lblTimeServerUrl.Location = new System.Drawing.Point(185, 420);
+			lblTimeServerUrl.Name = "lblTimeServerUrl";
+			lblTimeServerUrl.Size = new System.Drawing.Size(171, 15);
+			lblTimeServerUrl.TabIndex = 62;
+			lblTimeServerUrl.Tag = "";
+			lblTimeServerUrl.Text = "https://internsip.kemkes.go.id";
+			tmrTime.Interval = 1000;
+			chkAudibleNotifications.AutoSize = true;
+			chkAudibleNotifications.Location = new System.Drawing.Point(11, 385);
+			chkAudibleNotifications.Name = "chkAudibleNotifications";
+			chkAudibleNotifications.Size = new System.Drawing.Size(176, 19);
+			chkAudibleNotifications.TabIndex = 63;
+			chkAudibleNotifications.Tag = "";
+			chkAudibleNotifications.Text = "Allow audible notifications.";
+			chkAudibleNotifications.UseVisualStyleBackColor = true;
+			base.AutoScaleDimensions = new System.Drawing.SizeF(7f, 15f);
+			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			BackColor = System.Drawing.Color.White;
+			base.ClientSize = new System.Drawing.Size(504, 481);
+			base.Controls.Add(chkAudibleNotifications);
+			base.Controls.Add(lblTimeServerUrl);
+			base.Controls.Add(Label18);
+			base.Controls.Add(Label20);
+			base.Controls.Add(Label19);
+			base.Controls.Add(btnSubtractSeconds);
+			base.Controls.Add(Label17);
+			base.Controls.Add(Label4);
+			base.Controls.Add(lblMainTitle);
+			base.Controls.Add(Label16);
+			base.Controls.Add(btnAddSeconds);
+			base.Controls.Add(btnRereadTime);
+			base.Controls.Add(Label12);
+			base.Controls.Add(Label14);
+			base.Controls.Add(Label13);
+			base.Controls.Add(Label8);
+			base.Controls.Add(chkMakeTransparent);
+			base.Controls.Add(Label15);
+			base.Controls.Add(chkMakeTopmostWin);
+			base.Controls.Add(chkRefreshBrowser);
+			base.Controls.Add(Label11);
+			base.Controls.Add(Label10);
+			base.Controls.Add(Label9);
+			base.Controls.Add(Label6);
+			base.Controls.Add(Label7);
+			base.Controls.Add(Label5);
+			base.Controls.Add(txtSeconds);
+			base.Controls.Add(PictureBox4);
+			base.Controls.Add(txtMinutes);
+			base.Controls.Add(PictureBox3);
+			base.Controls.Add(txtHours);
+			base.Controls.Add(PictureBox2);
+			base.Controls.Add(btnStart);
+			base.Controls.Add(btnOnOff);
+			base.Controls.Add(lblSubTitle);
+			base.Controls.Add(picLogo);
+			base.Controls.Add(lblHeaderBackground);
+			base.Controls.Add(lblTime);
+			Font = new System.Drawing.Font("Calibri", 9.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+			base.MaximizeBox = false;
+			base.Name = "frmMain";
+			base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			Text = "Countdown App";
+			((System.ComponentModel.ISupportInitialize)PictureBox2).EndInit();
+			((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+			((System.ComponentModel.ISupportInitialize)PictureBox3).EndInit();
+			((System.ComponentModel.ISupportInitialize)PictureBox4).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
+		}
+
+		private void btnAddSeconds_Click(object sender, EventArgs e)
+		{
+			mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(1.0);
+			lblTime.ForeColor = Color.Green;
+		}
+
+		private void btnOnOff_Click(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(btnOnOff.Text, "On", TextCompare: false) == 0)
+			{
+				btnOnOff.Text = "Off";
+				btnOnOff.BackColor = Color.Green;
+				txtHours.Enabled = true;
+				txtMinutes.Enabled = true;
+				txtSeconds.Enabled = true;
+			}
+			else
+			{
+				btnOnOff.Text = "On";
+				btnOnOff.BackColor = Color.White;
+				txtHours.Enabled = false;
+				txtMinutes.Enabled = false;
+				txtSeconds.Enabled = false;
+			}
+		}
+
+		private void btnRereadTime_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				mdlSharedFunctions.CurrentTime = mdlSharedFunctions.GetDateTimeNtp();
+				lblTime.ForeColor = Color.Green;
+			}
+			catch (Exception ex)
+			{
+				ProjectData.SetProjectError(ex);
+				Exception ex2 = ex;
+				mdlSharedFunctions.DumpErrLog(base.Name + ".btnRereadTime_Click", ex2.Message);
+				MessageBox.Show("Countdown App encountered the following error while syncing the time.\r\n" + ex2.Message, "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+				ProjectData.ClearProjectError();
+			}
+		}
+
+		private void btnStart_Click(object sender, EventArgs e)
+		{
+			mdlSharedFunctions.CountdownTimeInSeconds = checked(Conversions.ToInteger(txtHours.Text) * 3600 + Conversions.ToInteger(txtMinutes.Text) * 60 + Conversions.ToInteger(txtSeconds.Text));
+			if (mdlSharedFunctions.CountdownTimeInSeconds > 0)
+			{
+				mdlSharedFunctions.MakeTopmostWin = chkMakeTopmostWin.Checked;
+				mdlSharedFunctions.RefreshBrowser = chkRefreshBrowser.Checked;
+				mdlSharedFunctions.MakeTransparent = chkMakeTransparent.Checked;
+				mdlSharedFunctions.AllowAudibleNotifications = chkAudibleNotifications.Checked;
+				MyProject.Forms.frmCountdown.Show();
+				Hide();
+			}
+			else
+			{
+				MessageBox.Show("You will have to enter a time duration before starting the countdown timer.", "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+			}
+		}
+
+		private void btnSubtractSeconds_Click(object sender, EventArgs e)
+		{
+			mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(-1.0);
+			lblTime.ForeColor = Color.Green;
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+		private void frmMain_Closing(object sender, CancelEventArgs e)
+		{
+			try
+			{
+				if (MessageBox.Show("Are you sure you want to exit Countdown App?", "Countdown App", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+				{
+					ProjectData.EndApp();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
+			catch (Exception ex)
+			{
+				ProjectData.SetProjectError(ex);
+				Exception ex2 = ex;
+				mdlSharedFunctions.DumpErrLog(base.Name + ".frmMain_Closing", ex2.Message);
+				ProjectData.EndApp();
+				ProjectData.ClearProjectError();
+			}
+		}
+
+		private void frmMain_Load(object sender, EventArgs e)
+		{
+			txtHours.Enabled = false;
+			txtMinutes.Enabled = false;
+			txtSeconds.Enabled = false;
+			lblTimeServerUrl.Text = mdlSystemParameters.TimeServerUrl;
+			mdlSharedFunctions.CurrentTime = DateAndTime.Now;
+			lblTime.Text = Strings.Format(mdlSharedFunctions.CurrentTime, "HH:mm:ss");
+			tmrTime.Enabled = true;
+			lblHeaderBackground.BackColor = mdlSystemParameters.HeaderBackColor;
+			lblMainTitle.BackColor = mdlSystemParameters.HeaderBackColor;
+			lblSubTitle.BackColor = mdlSystemParameters.HeaderBackColor;
+			picLogo.BackColor = mdlSystemParameters.HeaderBackColor;
+		}
+
+		private void tmrTime_Tick(object sender, EventArgs e)
+		{
+			try
+			{
+				if (FlagInitialTimeSynced)
+				{
+					mdlSharedFunctions.CurrentTime = mdlSharedFunctions.CurrentTime.AddSeconds(1.0);
+				}
+				else
+				{
+					mdlSharedFunctions.CurrentTime = mdlSharedFunctions.GetDateTimeNtp();
+					FlagInitialTimeSynced = true;
+				}
+				lblTime.ForeColor = Color.Gray;
+				lblTime.Text = Strings.Format(mdlSharedFunctions.CurrentTime, "HH:mm:ss");
+			}
+			catch (Exception ex)
+			{
+				ProjectData.SetProjectError(ex);
+				Exception ex2 = ex;
+				mdlSharedFunctions.DumpErrLog(base.Name + ".tmrTime_Tick", ex2.Message);
+				MessageBox.Show("Countdown App has encountered the following error.\r\n" + ex2.Message, "Countdown App", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+				ProjectData.ClearProjectError();
+			}
+		}
+
+		private void txtHours_GotFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtHours.Text, "00", TextCompare: false) == 0)
+			{
+				txtHours.Text = "";
+			}
+		}
+
+		private void txtHours_LostFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtHours.Text, "", TextCompare: false) == 0 || !Versioned.IsNumeric(txtHours.Text))
+			{
+				txtHours.Text = "00";
+			}
+		}
+
+		private void txtMinutes_GotFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtMinutes.Text, "00", TextCompare: false) == 0)
+			{
+				txtMinutes.Text = "";
+			}
+		}
+
+		private void txtMinutes_LostFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtMinutes.Text, "", TextCompare: false) == 0 || !Versioned.IsNumeric(txtMinutes.Text))
+			{
+				txtMinutes.Text = "00";
+			}
+		}
+
+		private void txtSeconds_GotFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtSeconds.Text, "00", TextCompare: false) == 0)
+			{
+				txtSeconds.Text = "";
+			}
+		}
+
+		private void txtSeconds_LostFocus(object sender, EventArgs e)
+		{
+			if (Operators.CompareString(txtSeconds.Text, "", TextCompare: false) == 0 || !Versioned.IsNumeric(txtSeconds.Text))
+			{
+				txtSeconds.Text = "00";
+			}
+		}
+	}
 }
